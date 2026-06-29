@@ -1,0 +1,138 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ────────────────────────────────────────────────────────────────────────
+# Project metadata (PEP 621 — read by every modern Python tool)
+# ────────────────────────────────────────────────────────────────────────
+[project]
+name = "startup_beauty"
+version = "0.1.0"
+description = "startup_beauty project"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "leon", email = "leo4study@gmail.com" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+]
+
+# Runtime dependencies (always installed for the package's users).
+# Add data/ML libraries here as the project actually needs them — keep
+# the install footprint small for users who don't need everything.
+dependencies = [
+    "loguru>=0.7",                   # structured logging
+    "pydantic-settings>=2.0",        # typed settings via .env / env vars
+    "typer>=0.12",                   # CLI framework (built on click)
+    # --- Data analysis (uncomment as needed) ---------------------------
+    # "pandas>=2.2",
+    # "numpy>=1.26",
+    # "matplotlib>=3.8",
+    # "seaborn>=0.13",
+    # "scikit-learn>=1.4",
+    # --- Deep learning (CUDA/CPU pattern: see docs/cross-platform.md) --
+    # "torch>=2.2",
+]
+
+# ────────────────────────────────────────────────────────────────────────
+# Optional extras for END USERS (DON'T put dev tools here — they'd leak
+# into the wheel's METADATA on publish). Uncomment when you have real
+# user-facing toggles like GPU support, S3 backend, etc.
+# See docs/cross-platform.md for the CUDA/CPU torch pattern using uv sources.
+# ────────────────────────────────────────────────────────────────────────
+# [project.optional-dependencies]
+# gpu = ["torch>=2.2"]
+# cpu = ["torch>=2.2"]
+
+# Project URLs surface on PyPI and GitHub. Fill the placeholders before
+# publishing. Commented for now so the file is valid even with no remote.
+# [project.urls]
+# Homepage   = "https://github.com/<USER>/startup_beauty"
+# Repository = "https://github.com/<USER>/startup_beauty"
+# Issues     = "https://github.com/<USER>/startup_beauty/issues"
+
+# Console script registered on install (e.g. `make_portfolio --help`).
+[project.scripts]
+startup_beauty = "startup_beauty.cli:app"
+
+# ────────────────────────────────────────────────────────────────────────
+# Dependency groups (PEP 735 — supported by uv / pdm / hatch / pip 25.1+).
+# These NEVER end up in the published wheel. 프로필별 구성은 스캐폴더가
+# 결정하므로 (docs / script / research) 아래 블록은 자동 생성됩니다.
+# ────────────────────────────────────────────────────────────────────────
+[dependency-groups]
+# research 프로필 — 데이터 분석 / ML / 노트북 기반 작업용 풀세트
+# (~80개 패키지). 가장 무겁지만 기여자 1명만 추가돼도 환경 일치가 큰 이득.
+test = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pytest-randomly>=3.15",         # 테스트 순서 랜덤화 — 숨은 결합 노출
+]
+lint = [
+    "ruff>=0.8",                     # 고속 린터 + 포매터 (Astral)
+    "black>=24.10",                  # 표준 포매터
+    "mypy>=1.13",                    # 정적 타입 체커
+]
+notebook = [
+    # VS Code / PyCharm 에서 .ipynb 를 쓰는 것을 가정한 슬림 구성.
+    # 브라우저 기반 Jupyter Lab UI 가 필요하면 `uv add --group notebook jupyter` 추가.
+    "ipykernel>=6.29",               # 셀 실행 커널
+    "nbqa>=1.8",                     # .ipynb 에 ruff/black 적용
+    "nbstripout>=0.7",               # 커밋 전 셀 출력 자동 제거
+]
+dev = [
+    {include-group = "test"},
+    {include-group = "lint"},
+    {include-group = "notebook"},
+    "pre-commit>=3.7",
+]
+
+# uv-specific config: `uv sync` (no flags) installs the dev group by default,
+# so first-time contributors only need one command.
+[tool.uv]
+default-groups = ["dev"]
+
+# ────────────────────────────────────────────────────────────────────────
+# Tool configurations
+# ────────────────────────────────────────────────────────────────────────
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# E/F = pycodestyle/pyflakes; I = isort; B = bugbear; UP = pyupgrade; SIM = simplify
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]                    # line-length is handled by formatter
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false                       # Start lax; tighten as the codebase matures.
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --cov=src --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+branch = true                        # measure branch coverage too
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+show_missing = true
+fail_under = 0                       # raise this once you add real tests

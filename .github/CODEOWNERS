@@ -1,0 +1,7 @@
+# Default reviewers for everything (edit team handles before pushing)
+# *       @your-team
+
+# Per-area ownership examples
+# /src/{name}/detection/   @teammate-a
+# /src/{name}/tracking/    @teammate-b
+# /docs/                   @your-username
