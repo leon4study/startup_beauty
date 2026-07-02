@@ -49,3 +49,6 @@ docs/internal/*
 
 # --- 로컬 전용 심볼릭 링크(다른 레포를 가리킴 → 커밋 시 깨짐) ---
 .claude/skills/product-research
+
+# --- 생성 PDF는 기본 미추적: 필요할 때만 `git add -f <파일>`로 선택 추가 ---
+docs/business/*.pdf
