@@ -39,11 +39,13 @@ data/raw/*
 data/processed/*
 data/external/*
 !data/**/.gitkeep
-models/*
-!models/.gitkeep
 logs/
-wandb/
-mlruns/
-*.pt
 *.pkl
-*.onnx
+
+# --- 팀 내부용(대외 비공개): 파일은 커밋하지 않고 팀 채널로만 공유 ---
+docs/internal/*
+!docs/internal/.gitkeep
+!docs/internal/README.md
+
+# --- 로컬 전용 심볼릭 링크(다른 레포를 가리킴 → 커밋 시 깨짐) ---
+.claude/skills/product-research

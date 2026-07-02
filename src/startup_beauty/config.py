@@ -12,15 +12,12 @@ class Settings(BaseSettings):
       project_name → PROJECT_NAME, log_level → LOG_LEVEL, etc.
     """
 
-    model_config = SettingsConfigDict(
-        env_file=".env", env_file_encoding="utf-8", extra="ignore"
-    )
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     project_name: str = "startup_beauty"
     log_level: str = "INFO"
-    log_dir: Path | None = None        # set to enable file logging
+    log_dir: Path | None = None  # set to enable file logging
     data_path: Path = Path("./data")
-    model_path: Path = Path("./models")
 
 
 # Singleton — import this everywhere instead of constructing Settings yourself.

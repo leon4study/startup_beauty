@@ -39,10 +39,6 @@ make lint       # ruff + mypy
 make format     # black + ruff --fix
 ```
 
-## Cross-platform notes
-
-See [docs/cross-platform.md](docs/cross-platform.md) for Mac/Windows compatibility and CUDA setup.
-
 ## License
 
 MIT

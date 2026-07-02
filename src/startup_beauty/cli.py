@@ -10,7 +10,7 @@ from startup_beauty.config import settings
 
 def setup_logging() -> None:
     """Configure loguru sinks based on settings. Called from app callback."""
-    logger.remove()                     # drop the default sink
+    logger.remove()  # drop the default sink
     logger.add(
         sys.stderr,
         format=(
@@ -45,7 +45,6 @@ def info() -> None:
     """Print runtime configuration."""
     logger.info(f"Project: {settings.project_name}")
     logger.info(f"Data path: {settings.data_path}")
-    logger.info(f"Model path: {settings.model_path}")
 
 
 @app.command()
