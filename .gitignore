@@ -51,4 +51,17 @@ docs/internal/*
 .claude/skills/product-research
 
 # --- 생성 PDF는 기본 미추적: 필요할 때만 `git add -f <파일>`로 선택 추가 ---
-docs/business/*.pdf
+docs/business/**/*.pdf
+docs/business/**/*.docx
+docs/business/**/*.odt
+docs/business/**/*.xlsx
+
+# --- 외부 참고용으로 붙여넣은 HTML(프로젝트 콘텐츠 아님) ---
+피스헤커레이더.html
+
+# 프로토타입은 별도 공개 repo(glou-prototype)로 미러링
+/prototype/
+
+# 노션 export(용량 70MB+, 스크린샷에 계정정보·실명 포함) — 커밋 금지
+notion_page_new/
+notion_page/
