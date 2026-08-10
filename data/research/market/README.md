@@ -134,5 +134,8 @@
 | 10 | [10_divergent_ideas.md](10_divergent_ideas.md) | 발산 아이디어·발굴법 |
 | 11 | [11_overseas_item_research.md](11_overseas_item_research.md) | 해외 K-뷰티 아이템 6축 점수화(product-research 방법론 적용) |
 | 12 | [12_idea_scoring.md](12_idea_scoring.md) | 발산 아이디어 6축 점수화 → 듀얼트랙 우선순위 |
+| 13 | [13_review_integrity.md](13_review_integrity.md) | 리뷰 신뢰 설계(타베로그·Yelp) → GLOU "외국인 신뢰 리뷰" 시사점 (07/05 멘토링) |
+| 14 | [14_ux_competitor_review.md](14_ux_competitor_review.md) | Yelp UX 벤치 + 외국인이 한국 앱 불편한 이유 + O/X 비교표 (프로토타입 리디자인 기준) |
+| 15 | [15_business_plan_research.md](15_business_plan_research.md) | ⭐ 사업계획서용 자료조사(시장·정책·경쟁·수익·심사기법·리스크) — 전 항목 출처 링크+코멘트 |
 | — | [_blocked_sources.md](_blocked_sources.md) | 차단·미검증 추적표 |
 | — | [_data_sources.md](_data_sources.md) | 합법·안정 데이터소스 카탈로그(GLOU용) |
