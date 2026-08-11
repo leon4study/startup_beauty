@@ -32,11 +32,11 @@ HEAD = """# GLOU 사업계획서 초안 — 참고 2 : PSSD 양식
 
 ## 목차
 
-- Q1. 문제 인식 (Problem) — 아이디어의 개발 동기·목적 및 목표 시장
-- Q2. 실현가능성 (Solution) — 아이디어의 개발 방안, 준비 정도, 차별화 방안
-- Q3. 성장전략 (Scale-up) — 사업화 계획, 추진일정, 자금 소요 및 조달 계획
-- Q4. 향후 발전방안 (Development) — 멘토링 후 아이디어 발전 방향 및 주요 개선점
-- 용어 설명 (각주)
+- Q1. 문제 인식 — 아이디어의 개발 동기·목적 및 목표 시장
+- Q2. 실현가능성 — 아이디어의 개발 방안, 준비 정도, 차별화 방안
+- Q3. 성장전략 — 사업화 계획, 추진일정, 자금 소요 및 조달 계획
+- Q4. 향후 발전방안 — 멘토링 후 아이디어 발전 방향 및 주요 개선점
+- 용어 설명
 - 참고 출처
 """
 
@@ -122,7 +122,7 @@ def main() -> None:
 
     parts = [HEAD, "\n---\n\n", "\n\n---\n\n".join(bodies)]
     if all_notes:
-        parts.append("\n\n---\n\n## 용어 설명 (각주)\n\n" + "\n\n".join(all_notes))
+        parts.append("\n\n---\n\n## 용어 설명\n\n" + "\n\n".join(all_notes))
     if all_refs:
         parts.append("\n\n---\n\n## 참고 출처\n\n" + "\n".join(all_refs) + "\n")
 
