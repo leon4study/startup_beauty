@@ -15,10 +15,10 @@
 
 ---
 
-## A0. 팀이 직접 확보한 통계 (2026-08-09 `notion_new_new`에 추가) — **이미 수치 추출 완료**
+## A0. 팀이 직접 확보한 통계 (2026-08-09 `notion_page`에 추가) — **이미 수치 추출 완료**
 
 ### A0-1. 법무부 「2025 출입국·외국인정책 통계연보」
-- 파일: `notion_new_new/[08 09] 사업계획서 완성/2025_출입국외국인정책_통계연보(개요·전체·통계표 엑셀).pdf/zip`
+- 파일: `notion_page/[08 09] 사업계획서 완성/2025_출입국외국인정책_통계연보(개요·전체·통계표 엑셀).pdf/zip`
 - 기준: **2025.12.31.**
 - 인용 규칙: 연보 안내에 따라 "2025년 출입국·외국인정책 통계연보 ○○페이지에서 인용" 형태로 페이지 병기 필요
 
@@ -187,7 +187,7 @@
 ## E. 자체 1차 데이터 (이미 확보)
 
 ### E1. GLOU 수요조사 (MindLens)
-- 파일: `notion_page_new/.../참고 2 PSSD 사업계획서 초안 양식/GLOU_raw_data.csv`
+- 파일: `notion_page/.../참고 2 PSSD 사업계획서 초안 양식/GLOU_raw_data.csv`
 - 규모: 응답자 **25명 × 문항 25개 = 662행** (long format)
 - 컬럼: response_id, respondent_name, respondent_email, phone, submitted_at, total_duration_sec, question_no, question_type, question, answer, **answer_duration_sec**, audio_url
 - 주요 결과: 같은 국적 리뷰 도움됨 92%(매우 52 + 어느 정도 40) / 1순위 기능 = 국적별 신뢰 리뷰 지도 48% / 앰배서더 활동 의향 56% / 베타 참여 의향 72%
@@ -201,7 +201,7 @@
 - 처리: 이름 → ID 치환.
 
 ### E3. 외국인 크리에이터 DM·커뮤니티 기록
-- 위치: `notion_page_new/모두의 창업/[DB] Project TASKS/아이디어/`
+- 위치: `notion_page/모두의 창업/[DB] Project TASKS/아이디어/`
 - 형태: 스크린샷(영문 원문). 리뷰 불신, ARC·한국 번호 장벽, 혼자 방문 어려움 등 원문 인용 가능.
 - 처리: 계정명·프로필 사진 마스킹 후 사업계획서 표로 인용.
 

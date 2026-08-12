@@ -63,5 +63,4 @@ docs/business/**/*.xlsx
 /prototype/
 
 # 노션 export(용량 70MB+, 스크린샷에 계정정보·실명 포함) — 커밋 금지
-notion_page_new/
 notion_page/
